@@ -8,14 +8,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class Api {
-	
-	@RequestMapping("/api")
-	public Object start() {
-		Map<String, String> start = new HashMap<>();
-		start.put("project", "NX");
-		start.put("status", "starting");
-		
-		return start;
+
+	@RequestMapping("/hello")
+	public Object userDetails() {
+		Map<String, Object> hello = new HashMap<>();
+		hello.put("message", "hello world");
+		return hello;
 	}
-	
 }
