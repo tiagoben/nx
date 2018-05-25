@@ -9,10 +9,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class Api {
 
-	@RequestMapping("/hello")
+	@RequestMapping({"/", "/hello"})
 	public Object userDetails() {
 		Map<String, Object> hello = new HashMap<>();
-		hello.put("message", "hello world");
+		hello.put("message", "welcome to nx-api");
 		return hello;
 	}
 }

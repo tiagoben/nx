@@ -22,7 +22,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Autowired
 	public void globalUserDetails(AuthenticationManagerBuilder auth) throws Exception {
 		auth.inMemoryAuthentication().passwordEncoder(userPasswordEncoder)
-				.withUser("paul")
+				.withUser("tiago")
 				.password("$2a$08$qvrzQZ7jJ7oy2p/msL4M0.l83Cd0jNsX6AJUitbgRXGzge4j035ha")
 				.roles("USER", "ADMIN");
 	}
@@ -43,7 +43,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         // @formatter:off
                  http
             .authorizeRequests()
-                .antMatchers("/login", "/hello").permitAll()
+                .antMatchers("/", "/login").permitAll()
                 .anyRequest().hasRole("USER")
                 .and()
             // TODO: put CSRF protection back into this endpoint
